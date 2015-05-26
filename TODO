@@ -1,0 +1,3 @@
+TODO LukeUtils:
+- PieChart: Leere Slices (value = 0) nicht zeichnen
+- PieChart: Gewichtung berücksichtigen
