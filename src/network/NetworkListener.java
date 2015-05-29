@@ -8,13 +8,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class NetworkListener extends Thread {
-	NetworkNotifier nN;
-	int port;
-	String input;
-	ServerSocket serverSocket;
-	Socket clientSocket;
-	PrintWriter out;
-	BufferedReader in;
+	private NetworkNotifier nN;
+	private int port;
+	private String input;
+	private ServerSocket serverSocket;
+	private Socket clientSocket;
+	private PrintWriter out;
+	private BufferedReader in;
 	
 	public NetworkListener(NetworkNotifier nN, int port){
 		this.nN = nN;
