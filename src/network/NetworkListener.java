@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import logging.Logger;
+
 public class NetworkListener extends Thread {
 	private NetworkNotifier nN;
 	private int port;
@@ -15,6 +17,7 @@ public class NetworkListener extends Thread {
 	private Socket clientSocket;
 	private PrintWriter out;
 	private BufferedReader in;
+	private boolean verbose = true;
 	
 	public NetworkListener(NetworkNotifier nN, int port){
 		this.nN = nN;
@@ -40,12 +43,19 @@ public class NetworkListener extends Thread {
 			System.out.println("start");
 			try {
 				while((input = in.readLine()) != null){
+					if (verbose) Logger.logMessage('I', this, "received:" + input);
 					nN.onNotify(input);
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+	}
+	public void send(String message){
+		if (this.isAlive()){
+			if (verbose) Logger.logMessage('I', this, "sending: " + message);
+			out.println(message);
 		}
 	}
 }
