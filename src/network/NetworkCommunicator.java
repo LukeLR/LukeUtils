@@ -1,7 +1,9 @@
 package network;
 
 import logging.Logger;
+
 //unused class, not needed anymore
+
 public class NetworkCommunicator {
 	private NetworkListener listener;
 	private NetworkNotifier notifier;
