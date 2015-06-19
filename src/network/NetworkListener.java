@@ -30,7 +30,7 @@ public class NetworkListener extends Thread {
 		}
 	}
 	
-	public void run(){
+	public void run(){ //start listening
 		while (!this.isInterrupted()){
 			try {
 				clientSocket = serverSocket.accept();
