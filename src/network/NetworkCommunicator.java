@@ -23,4 +23,4 @@ public class NetworkCommunicator {
 		if (verbose) Logger.logMessage('I', this, "passing message to listener: " + message);
 		listener.send(message);
 	}
-}
+} 
