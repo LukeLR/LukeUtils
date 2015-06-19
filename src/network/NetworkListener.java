@@ -34,7 +34,7 @@ public class NetworkListener extends Thread {
 		while (!this.isInterrupted()){
 			try {
 				clientSocket = serverSocket.accept();
-				out = new PrintWriter(clientSocket.getOutputStream());
+				out = new PrintWriter(clientSocket.getOutputStream(), true);
 				in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
