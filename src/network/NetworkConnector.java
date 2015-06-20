@@ -1,8 +1,15 @@
 package network;
-//unused class, not needed anymore
+
+//connects to a listening socket
+
 public class NetworkConnector extends Thread {
 	private int port;
 	public NetworkConnector(int port){
 		this.port = port;
 	}
+	
+	public void run(){
+		
+	}
+	
 }

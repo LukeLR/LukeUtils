@@ -10,7 +10,7 @@ import java.net.Socket;
 import logging.Logger;
 
 public class NetworkListener extends Thread {
-	private NetworkNotifier nN;
+	private NetworkClient nN;
 	private int port;
 	private String input;
 	private ServerSocket serverSocket;
@@ -19,7 +19,7 @@ public class NetworkListener extends Thread {
 	private BufferedReader in;
 	private boolean verbose = true;
 	
-	public NetworkListener(NetworkNotifier nN, int port){
+	public NetworkListener(NetworkClient nN, int port){
 		this.nN = nN;
 		this.port = port;
 		try{
@@ -36,9 +36,9 @@ public class NetworkListener extends Thread {
 				clientSocket = serverSocket.accept();
 				out = new PrintWriter(clientSocket.getOutputStream(), true);
 				in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-			} catch (IOException e1) {
+			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				e.printStackTrace();
 			}
 			System.out.println("start");
 			try {

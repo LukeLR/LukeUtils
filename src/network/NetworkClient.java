@@ -1,5 +1,5 @@
 package network;
 
-public interface NetworkNotifier {
+public interface NetworkClient {
 	public void onNotify(String notifyString);
 }

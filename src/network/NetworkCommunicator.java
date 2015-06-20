@@ -6,10 +6,10 @@ import logging.Logger;
 
 public class NetworkCommunicator {
 	private NetworkListener listener;
-	private NetworkNotifier notifier;
+	private NetworkClient notifier;
 	private boolean verbose = true;
 	
-	public NetworkCommunicator(NetworkListener listener, NetworkNotifier notifier){
+	public NetworkCommunicator(NetworkListener listener, NetworkClient notifier){
 		this.listener = listener;
 		this.notifier = notifier;
 	}
