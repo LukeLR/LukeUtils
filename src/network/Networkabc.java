@@ -2,9 +2,9 @@ package network;
 
 //connects to a listening socket
 
-public class NetworkServer extends Thread {
+public class Networkabc extends Thread {
 	private int port;
-	public NetworkServer(int port){
+	public Networkabc(int port){
 		this.port = port;
 	}
 	
