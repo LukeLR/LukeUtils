@@ -5,11 +5,11 @@ import logging.Logger;
 //unused class, not needed anymore
 
 public class NetworkCommunicator {
-	private NetworkClient listener;
+	private NetworkServer listener;
 	private NetworkNotifier notifier;
 	private boolean verbose = true;
 	
-	public NetworkCommunicator(NetworkClient listener, NetworkNotifier notifier){
+	public NetworkCommunicator(NetworkServer listener, NetworkNotifier notifier){
 		this.listener = listener;
 		this.notifier = notifier;
 	}

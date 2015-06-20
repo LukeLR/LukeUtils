@@ -9,7 +9,7 @@ import java.net.Socket;
 
 import logging.Logger;
 
-public class NetworkClient extends Thread {
+public class NetworkServer extends Thread {
 	private NetworkNotifier nN;
 	private int port;
 	private String input;
@@ -19,7 +19,7 @@ public class NetworkClient extends Thread {
 	private BufferedReader in;
 	private boolean verbose = true;
 	
-	public NetworkClient(NetworkNotifier nN, int port){
+	public NetworkServer(NetworkNotifier nN, int port){
 		this.nN = nN;
 		this.port = port;
 		try{
