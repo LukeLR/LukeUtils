@@ -11,7 +11,7 @@ import logging.Logger;
 
 //connects to a listening socket
 
-public class NetworkClient {
+public class NetworkClient extends Thread {
 	private int port;
 	private String hostname;
 	private NetworkNotifier notifier;
@@ -32,8 +32,22 @@ public class NetworkClient {
 			Logger.logMessage('E', this, "Can't connect to host: " + hostname);
 			System.exit(1);		
 		} catch (IOException e){
-			Logger.logMessage('E', this, "Can't get I/O for the connection to " + hostname + " on port " + port);
+			Logger.logMessage('E', this, "Can't get I/O for the connection to " + hostname + " on port " + port + ".");
 			System.exit(1);
+		}
+		if (verbose) Logger.logMessage('I', this, "Starting listening to " + hostname + " on port " + port + ".");
+		this.start();
+	}
+	
+	public void run(){
+		String input = "";
+		try{
+			while ((input = in.readLine()) != null){
+				if (verbose) Logger.logMessage('I', this, "received: " + input);
+				notifier.onNotify(input);
+			}
+		} catch (IOException e){
+			Logger.logMessage('E', this, "couldn't listen to network port as client.");
 		}
 	}
 	
