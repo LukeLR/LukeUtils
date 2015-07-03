@@ -77,7 +77,7 @@ public class Logger {
 	  return ste[ste.length - 1 - depth].getMethodName(); //Thank you Tom Tresansky
 	}
 	
-	public stativ void logException (Object sender, String message, Exception e){
+	public static void logException (Object sender, String message, Exception e){
 		logException(sender, message, e, "default");
 	}
 	
