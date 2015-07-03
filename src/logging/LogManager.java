@@ -35,16 +35,11 @@ public class LogManager {
 				}
 				
 				FileHandler.writeStringBuilder(logFile, toWrite);
-//				return "";
 			} else {
-//				Date d = cal.getTime();
-				
 				String[] filenameArray = new String [2];
 				filenameArray = filename.split("\\.(?=[^\\.]+$)");
 				filenameArray[0] = filenameArray[0] + TimeHandler.getTimeString(0);
 				filename = filenameArray[0] + "." + filenameArray[1];
-				
-//				filename = filename + d.getYear() + d.getMonth() + d.getDay() + d.getHours() + d.getMinutes() + d.getSeconds();
 				logFile = new File (filename);
 				
 				Logger.logMessage('I', new LogManager(), "Creating new LogFile " + filename);
