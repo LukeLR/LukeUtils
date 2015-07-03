@@ -1,44 +1,72 @@
 package logging;
 
-import java.awt.List;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Logger {
 	public static long counter = 0;
-	public static StringBuilder log = new StringBuilder();
+	public static List<Log> logs = new LinkedList();
+	
 	public Logger () {
 		// Konstruktor nicht nötig, da statisch
 	}
 	
-	public static void logMessage (Object sender, String message){
-		char type = 'U';
-		logMessage(type, sender, message);
+	public static void logMessage (String message){
+		logMessage('U', null, message, "default");
 	}
 	
-	public static void logMessage (char type, Object sender, String message){
-		//TODO: logMessage (char type, Object pObject, String message) schreiben!
+	public static void logMessage (Object sender, String message){
+		logMessage('U', sender, message, "default");
+	}
+	
+	public static void logMessage (char type, String message){
+		logMessage(type, null, message, "default");
+	}
+	
+	public static void logMessage(String message, String channel){
+		logMessage('U', null, message, channel);
+	}
+	
+	public static void logMessage(Object sender, String message, String channel){
+		logMessage('U', sender, message, channel);
+	}
+	
+	public static void logMessage(char type, String message, String channel){
+		logMessage(type, null, message, channel);
+	}
+	
+	public static void logMessage(char type, Object sender, String message){
+		logMessage(type, sender, message, "default");
+	}
+	
+	public static void logMessage (char type, Object sender, String message, String channel){
 		/* logMessage("Got className: " + pObject.getClass().getName());
 		String[] className = new String[2];
 		className = pObject.getClass().getName().split(".");
 		logMessage("Got className: " + className[0] + className[1]);
 		String classNameString = className[className.length - 1];
 		System.out.println("[" + type + "][" + classNameString + "][" + getMethodName(1) + "]: " + message); */
-		System.out.println(counter + " [" + type + "][" + sender.getClass().getName() + "][" + getMethodName(2) + "]: " + message);
+		String logString = "";
+		if (sender == null){
+			System.out.println(counter + " [" + type + "] " + message);
+			logString = counter + " [" + type + "] " + message;
+		} else {
+			System.out.println(counter + " [" + type + "][" + sender.getClass().getName() + "][" + getMethodName(2) + "]: " + message);
+			logString = counter + " [" + type + "][" + sender.getClass().getName() + "][" + getMethodName(2) + "]: " + message;
+		}
 		counter++;
-		log.append(counter + " [" + type + "][" + sender.getClass().getName() + "][" + getMethodName(2) + "]: " + message);
-		log.append(System.lineSeparator());
-	}
-	
-	public static void logMessage (char type, String message){
-		//TODO: logMessage (char type, String message) schreiben!
-		System.out.println(counter + " [" + type + "] " + message);
-		counter++;
-		log.append(counter + " [" + type + "] " + message);
-		log.append(System.lineSeparator());
-	}
-	
-	public static void logMessage (String message){
-		char type = 'U';
-		logMessage(type, message);
+		Log dummy = new Log(channel);
+		int index = logs.indexOf(dummy);
+		if (index == -1){
+			System.out.println(counter + " [ W ][ Logger ][ logMessage ]: Log for channel " + channel + " does not exist. Trying to create a new one!");
+			logString =        counter + " [ W ][ Logger ][ logMessage ]: Log for channel " + channel + " does not exist. Trying to create a new one!" + System.lineSeparator() + logString;
+			// create new log for channel and append it to the list of logs.
+			
+			dummy.append(logString);
+			logs.add(dummy);
+		} else {
+			logs.get(index).append(logString + System.lineSeparator());
+		}
 	}
 	
 	private static String getMethodName(final int depth){
@@ -49,10 +77,14 @@ public class Logger {
 	  return ste[ste.length - 1 - depth].getMethodName(); //Thank you Tom Tresansky
 	}
 	
-	public static void logException (Object sender, String message, Exception e){
-		logMessage('E', sender, message);
+	public stativ void logException (Object sender, String message, Exception e){
+		logException(sender, message, e, "default");
+	}
+	
+	public static void logException (Object sender, String message, Exception e, String channel){
+		logMessage('E', sender, message, channel);
 		for (int i = 0; i < e.getStackTrace().length; i++){
-			Logger.logMessage('E', sender, e.getStackTrace()[i].toString());
+			Logger.logMessage('E', sender, e.getStackTrace()[i].toString(), channel);
 		}
 	}
 }
