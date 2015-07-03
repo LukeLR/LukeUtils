@@ -18,10 +18,23 @@ public class LogManager {
 				toWrite.append(FileHandler.readStringBuilder(logFile));
 				toWrite.append(System.lineSeparator());
 				toWrite.append(System.lineSeparator());
-				toWrite.append(Logger.log);
+				toWrite.append("=========================================");
+				toWrite.append("===== new Instance on " + TimeHandler.getTimeString(0) + " =====");
+				toWrite.append("=========================================");
+				
+				for (int i = 0; i < Logger.logs.size(); i++){
+					Log currentLog = Logger.logs.get(i);
+					toWrite.append(" ------ dumping channel: " + currentLog.getChannel() + " ------");
+					toWrite.append(Logger.logs.get(i));
+					if (i < Logger.logs.size() - 1){
+						// Check if there will come another channel after this one and add needed spare lines
+						toWrite.append(System.lineSeparator());
+						toWrite.append(System.lineSeparator());
+					}
+					Logger.logs.get(i).clearLog();
+				}
 				
 				FileHandler.writeStringBuilder(logFile, toWrite);
-				Logger.log = new StringBuilder();
 //				return "";
 			} else {
 //				Date d = cal.getTime();
@@ -36,15 +49,47 @@ public class LogManager {
 				
 				Logger.logMessage('I', new LogManager(), "Creating new LogFile " + filename);
 				
-				FileHandler.writeStringBuilder(logFile, Logger.log);
-				Logger.log = new StringBuilder();
-//				return filename;
+				StringBuilder toWrite = new StringBuilder();
+				
+				toWrite.append("=========================================");
+				toWrite.append("===== new Instance on " + TimeHandler.getTimeString(0) + " =====");
+				toWrite.append("=========================================");
+				
+				for (int i = 0; i < Logger.logs.size(); i++){
+					Log currentLog = Logger.logs.get(i);
+					toWrite.append(" ------ dumping channel: " + currentLog.getChannel() + " ------");
+					toWrite.append(Logger.logs.get(i));
+					if (i < Logger.logs.size() - 1){
+						// Check if there will come another channel after this one and add needed spare lines
+						toWrite.append(System.lineSeparator());
+						toWrite.append(System.lineSeparator());
+					}
+					Logger.logs.get(i).clearLog();
+				}
+				
+				FileHandler.writeStringBuilder(logFile, toWrite);
 			}
 		} else {
 			Logger.logMessage('I', new LogManager(), "No Log file exists, creating new one: " + filename);
-			FileHandler.writeStringBuilder(logFile, Logger.log);
-			Logger.log = new StringBuilder();
-//			return filename;
+			StringBuilder toWrite = new StringBuilder();
+			
+			toWrite.append("=========================================");
+			toWrite.append("===== new Instance on " + TimeHandler.getTimeString(0) + " =====");
+			toWrite.append("=========================================");
+			
+			for (int i = 0; i < Logger.logs.size(); i++){
+				Log currentLog = Logger.logs.get(i);
+				toWrite.append(" ------ dumping channel: " + currentLog.getChannel() + " ------");
+				toWrite.append(Logger.logs.get(i));
+				if (i < Logger.logs.size() - 1){
+					// Check if there will come another channel after this one and add needed spare lines
+					toWrite.append(System.lineSeparator());
+					toWrite.append(System.lineSeparator());
+				}
+				Logger.logs.get(i).clearLog();
+			}
+			
+			FileHandler.writeStringBuilder(logFile, toWrite);
 		}
 		return filename;
 	}
