@@ -18,11 +18,11 @@ public class LogManager {
 				toWrite.append(FileHandler.readStringBuilder(logFile));
 				toWrite.append(System.lineSeparator());
 				toWrite.append(System.lineSeparator());
-				toWrite.append("=========================================");
+				toWrite.append("==========================================");
 				toWrite.append(System.lineSeparator());
 				toWrite.append("===== new Instance on " + TimeHandler.getTimeString(0) + " =====");
 				toWrite.append(System.lineSeparator());
-				toWrite.append("=========================================");
+				toWrite.append("==========================================");
 				toWrite.append(System.lineSeparator());
 				
 				for (int i = 0; i < Logger.logs.size(); i++){
@@ -50,11 +50,11 @@ public class LogManager {
 				
 				StringBuilder toWrite = new StringBuilder();
 				
-				toWrite.append("=========================================");
+				toWrite.append("==========================================");
 				toWrite.append(System.lineSeparator());
 				toWrite.append("===== new Instance on " + TimeHandler.getTimeString(0) + " =====");
 				toWrite.append(System.lineSeparator());
-				toWrite.append("=========================================");
+				toWrite.append("==========================================");
 				toWrite.append(System.lineSeparator());
 				
 				for (int i = 0; i < Logger.logs.size(); i++){
@@ -76,11 +76,11 @@ public class LogManager {
 			Logger.logMessage('I', new LogManager(), "No Log file exists, creating new one: " + filename);
 			StringBuilder toWrite = new StringBuilder();
 			
-			toWrite.append("=========================================");
+			toWrite.append("==========================================");
 			toWrite.append(System.lineSeparator());
 			toWrite.append("===== new Instance on " + TimeHandler.getTimeString(0) + " =====");
 			toWrite.append(System.lineSeparator());
-			toWrite.append("=========================================");
+			toWrite.append("==========================================");
 			toWrite.append(System.lineSeparator());
 			
 			for (int i = 0; i < Logger.logs.size(); i++){
