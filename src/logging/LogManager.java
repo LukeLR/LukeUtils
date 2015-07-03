@@ -19,12 +19,16 @@ public class LogManager {
 				toWrite.append(System.lineSeparator());
 				toWrite.append(System.lineSeparator());
 				toWrite.append("=========================================");
+				toWrite.append(System.lineSeparator());
 				toWrite.append("===== new Instance on " + TimeHandler.getTimeString(0) + " =====");
+				toWrite.append(System.lineSeparator());
 				toWrite.append("=========================================");
+				toWrite.append(System.lineSeparator());
 				
 				for (int i = 0; i < Logger.logs.size(); i++){
 					Log currentLog = Logger.logs.get(i);
 					toWrite.append(" ------ dumping channel: " + currentLog.getChannel() + " ------");
+					toWrite.append(System.lineSeparator());
 					toWrite.append(Logger.logs.get(i));
 					if (i < Logger.logs.size() - 1){
 						// Check if there will come another channel after this one and add needed spare lines
@@ -47,12 +51,16 @@ public class LogManager {
 				StringBuilder toWrite = new StringBuilder();
 				
 				toWrite.append("=========================================");
+				toWrite.append(System.lineSeparator());
 				toWrite.append("===== new Instance on " + TimeHandler.getTimeString(0) + " =====");
+				toWrite.append(System.lineSeparator());
 				toWrite.append("=========================================");
+				toWrite.append(System.lineSeparator());
 				
 				for (int i = 0; i < Logger.logs.size(); i++){
 					Log currentLog = Logger.logs.get(i);
 					toWrite.append(" ------ dumping channel: " + currentLog.getChannel() + " ------");
+					toWrite.append(System.lineSeparator());
 					toWrite.append(Logger.logs.get(i));
 					if (i < Logger.logs.size() - 1){
 						// Check if there will come another channel after this one and add needed spare lines
@@ -69,12 +77,16 @@ public class LogManager {
 			StringBuilder toWrite = new StringBuilder();
 			
 			toWrite.append("=========================================");
+			toWrite.append(System.lineSeparator());
 			toWrite.append("===== new Instance on " + TimeHandler.getTimeString(0) + " =====");
+			toWrite.append(System.lineSeparator());
 			toWrite.append("=========================================");
+			toWrite.append(System.lineSeparator());
 			
 			for (int i = 0; i < Logger.logs.size(); i++){
 				Log currentLog = Logger.logs.get(i);
 				toWrite.append(" ------ dumping channel: " + currentLog.getChannel() + " ------");
+				toWrite.append(System.lineSeparator());
 				toWrite.append(Logger.logs.get(i));
 				if (i < Logger.logs.size() - 1){
 					// Check if there will come another channel after this one and add needed spare lines
