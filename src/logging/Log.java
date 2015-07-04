@@ -35,7 +35,8 @@ public class Log {
 	}
 	
 	public boolean equals(Log compare){
-		return getChannel().equals(compare.getChannel());
+//		return getChannel().equals(compare.getChannel());
+		return true;
 	}
 	
 	public void clearLog(){
