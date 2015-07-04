@@ -57,9 +57,10 @@ public class Logger {
 		counter++;
 		Log dummy = new Log(channel);
 		int index = logs.indexOf(dummy);
+		logs.in
 		if (index == -1){
-			System.out.println(counter + " [ W ][ Logger ][ logMessage ]: Log for channel " + channel + " does not exist. Trying to create a new one!");
-			logString =        counter + " [ W ][ Logger ][ logMessage ]: Log for channel " + channel + " does not exist. Trying to create a new one!" + System.lineSeparator() + logString;
+			System.out.println(counter + " [W][Logger][logMessage]: Log for channel " + channel + " does not exist. Trying to create a new one!");
+			logString =        counter + " [W][Logger][logMessage]: Log for channel " + channel + " does not exist. Trying to create a new one!" + System.lineSeparator() + logString;
 			// create new log for channel and append it to the list of logs.
 			
 			dummy.append(logString);
