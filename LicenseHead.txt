@@ -15,13 +15,3 @@
  *
  * Copyright Lukas Rose 2013 - 2015
  */
-
-/**
- * 
- */
-/**
- * @author lukas
- *
- */
-package basicConsole;
-//A very simple input-output-interface for gui
