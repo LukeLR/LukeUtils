@@ -39,6 +39,10 @@ public class Log {
 		return true;
 	}
 	
+	public boolean isEqual(Log compare){
+		return true;
+	}
+	
 	public void clearLog(){
 		log = new StringBuilder();
 	}
