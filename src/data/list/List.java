@@ -151,7 +151,7 @@ public class List<E> {
 		}
 	}
 	
-	public int getIndex(E element){
+	public int indexOf(E element){
 		if (!isEmpty()){
 			int index = 0;
 			Node<E> oldCurrent = current;
