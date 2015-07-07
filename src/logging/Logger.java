@@ -81,7 +81,7 @@ public class Logger {
 			// create new log for channel and append it to the list of logs.
 			
 			dummy.append(logString);
-			logs.add(dummy);
+			logs.append(dummy);
 		} else {
 			logs.get(index).append(logString + System.lineSeparator());
 		}

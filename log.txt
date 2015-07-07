@@ -131,3 +131,94 @@ Log channel: default
 Log channel: default
 9 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
 8 [I][util.TimeHandler][getTimeString]: 20150705024000
+
+==========================================
+===== new Instance on 20150707104659 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+1 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+0 [I][test.LoggerTest][getMethodName]: Hello!
+
+ ------ dumping channel: default ------
+Log channel: default
+2 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+1 [I][test.LoggerTest][getMethodName]: Hallo!
+
+ ------ dumping channel: default ------
+Log channel: default
+3 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+2 [I][test.LoggerTest][getMethodName]: Ave!
+
+ ------ dumping channel: default ------
+Log channel: default
+4 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+3 [I][logging.LogManager][logMessage]: Saving Log File
+
+ ------ dumping channel: default ------
+Log channel: default
+5 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+4 [I][logging.LogManager][logMessage]: LogFile exists: log.txt
+
+ ------ dumping channel: default ------
+Log channel: default
+6 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+5 [I][logging.LogManager][logMessage]: Appending to LogFile log.txt
+
+ ------ dumping channel: default ------
+Log channel: default
+7 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+6 [I][util.FileHandler][readStringBuilder]: Reading StringBuilder from log.txt
+
+ ------ dumping channel: default ------
+Log channel: default
+8 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+7 [I][util.TimeHandler][getTimeString]: Returning TimeArray 20150707104659
+
+ ------ dumping channel: default ------
+Log channel: default
+9 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+8 [I][util.TimeHandler][getTimeString]: 20150707104659
+
+==========================================
+===== new Instance on 20150707105356 =====
+==========================================
+ ------ dumping channel: default ------
+Log channel: default
+2 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+1 [I][test.LoggerTest][getMethodName]: Hallo!
+
+ ------ dumping channel: default ------
+Log channel: default
+3 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+2 [I][test.LoggerTest][getMethodName]: Ave!
+
+ ------ dumping channel: default ------
+Log channel: default
+4 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+3 [I][logging.LogManager][logMessage]: Saving Log File
+
+ ------ dumping channel: default ------
+Log channel: default
+5 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+4 [I][logging.LogManager][logMessage]: LogFile exists: log.txt
+
+ ------ dumping channel: default ------
+Log channel: default
+6 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+5 [I][logging.LogManager][logMessage]: Appending to LogFile log.txt
+
+ ------ dumping channel: default ------
+Log channel: default
+7 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+6 [I][util.FileHandler][readStringBuilder]: Reading StringBuilder from log.txt
+
+ ------ dumping channel: default ------
+Log channel: default
+8 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+7 [I][util.TimeHandler][getTimeString]: Returning TimeArray 20150707105356
+
+ ------ dumping channel: default ------
+Log channel: default
+9 [W][Logger][logMessage]: Log for channel default does not exist. Trying to create a new one!
+8 [I][util.TimeHandler][getTimeString]: 20150707105356
