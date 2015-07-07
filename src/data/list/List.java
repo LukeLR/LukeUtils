@@ -83,7 +83,7 @@ public class List<E> {
 		return head == null | tail == null | current == null;
 	}
 	
-	public E getCurrent(){
+	public E current(){
 		if (!isEmpty()){
 			return current.getContent();
 		} else {
@@ -91,7 +91,7 @@ public class List<E> {
 		}
 	}
 	
-	public E getFirst(){
+	public E first(){
 		if (!isEmpty()){
 			return head.getContent();
 		} else {
@@ -99,9 +99,22 @@ public class List<E> {
 		}
 	}
 	
-	public E getLast(){
+	public E last(){
 		if (!isEmpty()){
 			return tail.getContent();
+		} else {
+			return null;
+		}
+	}
+	
+	public E get(int index){
+		if(!isEmpty()){
+			E object;
+			Node oldCurrent = current;
+			jump(index);
+			object = current();
+			current = oldCurrent;
+			return object;
 		} else {
 			return null;
 		}
@@ -144,7 +157,7 @@ public class List<E> {
 			Node<E> oldCurrent = current;
 			if (element == null){
 				for (toFirst();!isLast();next()){
-					if (getCurrent() == null){
+					if (current() == null){
 						current = oldCurrent;
 						return index;
 					}
@@ -152,7 +165,7 @@ public class List<E> {
 				}
 			} else {
 				for (toFirst();!isLast();next()){
-					if (getCurrent().equals(element)){
+					if (current().equals(element)){
 						current = oldCurrent;
 						return index;
 					}
