@@ -18,11 +18,13 @@
 
 package logging;
 
-import data.list.List;
+//import data.list.List;
+import java.util.List;
+import java.util.LinkedList;
 
 public class Logger {
 	public static long counter = 0;
-	public static List<Log> logs = new List<Log>();
+	public static List<Log> logs = new LinkedList();
 	
 	public Logger () {
 		// Konstruktor nicht nötig, da statisch
@@ -81,7 +83,7 @@ public class Logger {
 			// create new log for channel and append it to the list of logs.
 			
 			dummy.append(logString);
-			logs.append(dummy);
+			logs.add(dummy);
 		} else {
 			logs.get(index).append(logString + System.lineSeparator());
 		}
