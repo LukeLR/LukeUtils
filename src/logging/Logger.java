@@ -18,12 +18,11 @@
 
 package logging;
 
-import java.util.LinkedList;
-import java.util.List;
+import data.list.List;
 
 public class Logger {
 	public static long counter = 0;
-	public static List<Log> logs = new LinkedList();
+	public static List<Log> logs = new List<Log>();
 	
 	public Logger () {
 		// Konstruktor nicht nötig, da statisch
