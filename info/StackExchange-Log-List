@@ -1,0 +1,80 @@
+Hey folks, I need to consult you again since I'm stuck with the following problem:
+
+To provide logging abilities to all my project, I use a selfmade library for logging, which includes static methods for access from all classes and objects, and also an ability to dump the log contents to a file on exit. This worked well for years now, now I need to extend the library to provide a function to use several "log channels", which each represent individual logs. Each log channel is an instance of the class "Log" (see below), and then added to a list (as in class ListTest3, see below). But when trying to get a specific log from the list by creating a dummy object which has the same channel name, always `-1` is returned, indicating that no object could be found. Why?
+
+class Log:
+
+    public class Log {
+      //...
+      
+      public String getChannel(){
+        return channel;
+      }
+      
+      //...
+      
+      public boolean equals(Log compare){
+        // return getChannel().equals(compare.getChannel());
+        return true;
+      
+        /**
+         * used to contain a method to compare the channel names of the log
+         * object itself and the provided object for comparison, now always
+         * returns true for debugging purposes
+         */
+      }
+      
+      //...
+    }
+
+For debugging, I created the following class ListTest3:
+
+    package test;
+    
+    import java.util.List;
+    import java.util.LinkedList;
+    
+    import logging.Log;
+    
+    public class ListTest3 {
+      public static void main(String[] args){
+        List list = new LinkedList();
+        Log logDefault = new Log();
+        logDefault.setChannel("default");
+        Log logAdvanced = new Log();
+        logAdvanced.setChannel("advanced");
+        Log logDebug = new Log();
+        logDebug.setChannel("debug");
+        
+        list.add(logDefault);
+        list.add(logAdvanced);
+        list.add(logDebug);
+        
+        System.out.println("Index of logDefault: " + list.indexOf(logDefault));
+        System.out.println("Index of logAdvanced: " + list.indexOf(logAdvanced));
+        System.out.println("Index of logDebug: " + list.indexOf(logDebug));
+        
+        Log logDefaultDummy = new Log();
+        logDefaultDummy.setChannel("default");
+        System.out.println("Index of logDefaultDummy: " + list.indexOf(logDefaultDummy));
+        
+        Log logAdvancedDummy = new Log();
+        logAdvancedDummy.setChannel("advanced");
+        System.out.println("Index of logAdvancedDummy: " + list.indexOf(logAdvancedDummy));
+        
+        Log logDebugDummy = new Log();
+        logDebugDummy.setChannel("debug");
+        System.out.println("Index of logDebugDummy: " + list.indexOf(logDebugDummy));
+      }
+    }
+
+But instead of returning the indices of the three log objects when searching the list by their dummies, always `-1` is returned, as the following output shows:
+
+    Index of logDefault: 0
+    Index of logAdvanced: 1
+    Index of logDebug: 2
+    Index of logDefaultDummy: -1
+    Index of logAdvancedDummy: -1
+    Index of logDebugDummy: -1
+
+Any help is very appreciated, since I don't know how to fix this problem. Thanks for reading that batch of text! ;)
