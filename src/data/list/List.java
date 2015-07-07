@@ -179,6 +179,6 @@ public class List<E> {
 	}
 	
 	public boolean contains(E element){
-		return getIndex(element) != -1;
+		return indexOf(element) != -1;
 	}
 }
