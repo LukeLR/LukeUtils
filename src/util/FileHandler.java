@@ -108,6 +108,10 @@ public class FileHandler {
 	    return text;
 	}
 	
+	public static StringBuilder readStringBuilder (String filename){
+    	return readStringBuilder(new File(filename));
+    }
+	
 	public static boolean deleteFile(File f) {
 		Logger.logMessage('I', new FileHandler(), "Deleting File saved at " + f.getName());
 
