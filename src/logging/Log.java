@@ -52,9 +52,12 @@ public class Log {
 		return log;
 	}
 	
-	public boolean equals(Log compare){
-//		return getChannel().equals(compare.getChannel());
-		return true;
+	public boolean equals(Object compare){
+		try{
+			return ((Log)compare).getChannel().equals(getChannel());
+		} catch (Exception ex) {
+			return false;
+		}
 	}
 	
 	public boolean isEqual(Log compare){
