@@ -21,19 +21,35 @@ package logging;
 public class Log {
 	public StringBuilder log;
 	public String channel = "default";
+	public long index = 0;
 	
 	public Log(){
 		log = new StringBuilder();
 		channel = "default";
+		index = 0;
 	}
 	
 	public Log(String channel){
 		log = new StringBuilder();
 		this.channel = channel;
+		index = 0;
+	}
+	
+	public Log(String channel, long startIndex){
+		log = new StringBuilder();
+		this.channel = channel;
+		index = startIndex;
+	}
+	
+	public Log (long startIndex){
+		log = new StringBuilder();
+		channel = "default";
+		index = startIndex;
 	}
 	
 	public void append(String str){
 		log.append(str);
+		index++;
 	}
 	
 	public void setChannel(String chnl){
@@ -66,5 +82,17 @@ public class Log {
 	
 	public void clearLog(){
 		log = new StringBuilder();
+	}
+	
+	public void setIndex(long index){
+		this.index = index;
+	}
+	
+	public long getIndex(){
+		return index;
+	}
+	
+	public void increaseIndex(){
+		index++;
 	}
 }

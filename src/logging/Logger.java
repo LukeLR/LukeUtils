@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.LinkedList;
 
 public class Logger {
-	public static long counter = 0;
 	public static List<Log> logs = new LinkedList();
 	
 	public Logger () {
@@ -70,6 +69,7 @@ public class Logger {
 		logMessage(type, sender, message, "default");
 	}
 	
+	@SuppressWarnings("unused")
 	public static void logMessage (String type, Object sender, String message, String channel){
 		/* logMessage("Got className: " + pObject.getClass().getName());
 		String[] className = new String[2];
@@ -78,15 +78,9 @@ public class Logger {
 		String classNameString = className[className.length - 1];
 		System.out.println("[" + type + "][" + classNameString + "][" + getMethodName(1) + "]: " + message); */
 		String logString = "";
-		if (sender == null){
-			System.out.println(counter + " [" + type + "] " + message);
-			logString = counter + " [" + type + "] " + message;
-		} else {
-			System.out.println(counter + " [" + type + "][" + sender.getClass().getName() + "][" + getMethodName(2) + "]: " + message);
-			logString = counter + " [" + type + "][" + sender.getClass().getName() + "][" + getMethodName(2) + "]: " + message;
-		}
-		counter++;
+		long counter = 0;
 		Log dummy = new Log(channel);
+		Log result = null;
 		System.out.println("Searching for channel " + channel + ": " + String.valueOf(logs.contains(dummy)));
 		int index = logs.indexOf(dummy);
 		if (index == -1){
@@ -94,10 +88,25 @@ public class Logger {
 			logString =        counter + " [W][Logger][logMessage]: Log for channel " + channel + " does not exist. Trying to create a new one!" + System.lineSeparator() + logString;
 			// create new log for channel and append it to the list of logs.
 			
-			dummy.append(logString);
 			logs.add(dummy);
+			result = dummy;
 		} else {
-			logs.get(index).append(logString + System.lineSeparator());
+			result = logs.get(index);
+			counter = result.getIndex();
+		}
+		
+		if (sender == null){
+			System.out.println(counter + " [" + type + "] " + message);
+			logString = counter + " [" + type + "] " + message;
+		} else {
+			System.out.println(counter + " [" + type + "][" + sender.getClass().getName() + "][" + getMethodName(2) + "]: " + message);
+			logString = counter + " [" + type + "][" + sender.getClass().getName() + "][" + getMethodName(2) + "]: " + message;
+		}
+		
+		if (result != null){
+			result.append(logString + System.lineSeparator());
+		} else {
+			System.out.println("An internal error occurred: log channel was found, but result is nil");
 		}
 	}
 	
