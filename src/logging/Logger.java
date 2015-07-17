@@ -31,34 +31,46 @@ public class Logger {
 	}
 	
 	public static void logMessage (String message){
-		logMessage('U', null, message, "default");
+		logMessage("U", null, message, "default");
 	}
 	
 	public static void logMessage (Object sender, String message){
-		logMessage('U', sender, message, "default");
+		logMessage("U", sender, message, "default");
 	}
 	
 	public static void logMessage (char type, String message){
-		logMessage(type, null, message, "default");
+		logMessage(String.valueOf(type), null, message, "default");
 	}
 	
 	public static void logMessage(String message, String channel){
-		logMessage('U', null, message, channel);
+		logMessage("U", null, message, channel);
 	}
 	
 	public static void logMessage(Object sender, String message, String channel){
-		logMessage('U', sender, message, channel);
+		logMessage("U", sender, message, channel);
 	}
 	
 	public static void logMessage(char type, String message, String channel){
-		logMessage(type, null, message, channel);
+		logMessage(String.valueOf(type), null, message, channel);
+	}
+	
+	public static void logMessage(char type, Object sender, String message, String channel){
+		logMessage(String.valueOf(type), sender, message, channel);
 	}
 	
 	public static void logMessage(char type, Object sender, String message){
+		logMessage(String.valueOf(type), sender, message, "default");
+	}
+	
+	public static void logMessage(String type, String message, String channel){
+		logMessage(type, null, message, channel);
+	}
+	
+	public static void logMessage(String type, Object sender, String message){
 		logMessage(type, sender, message, "default");
 	}
 	
-	public static void logMessage (char type, Object sender, String message, String channel){
+	public static void logMessage (String type, Object sender, String message, String channel){
 		/* logMessage("Got className: " + pObject.getClass().getName());
 		String[] className = new String[2];
 		className = pObject.getClass().getName().split(".");
