@@ -1,3 +1,4 @@
 TODO LukeUtils:
 - PieChart: Leere Slices (value = 0) nicht zeichnen
 - PieChart: Gewichtung berücksichtigen
+- Logger: MessageTypes ('E', 'W', 'I' (...?)) als Log-Channel
