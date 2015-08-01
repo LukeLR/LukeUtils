@@ -72,6 +72,7 @@ public class Log {
 		try{
 			return ((Log)compare).getChannel().equals(getChannel());
 		} catch (Exception ex) {
+			Logger.logMessage('W', this, "Comparing failed! Is the comparison object of type 'Log'?");
 			return false;
 		}
 	}
