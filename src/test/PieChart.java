@@ -20,8 +20,6 @@ package test;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -55,7 +53,8 @@ class Slice{
 }
 
 class panel extends JPanel{
-    JButton bt;
+	private static final long serialVersionUID = 1L;
+	JButton bt;
     JTextField txt;
     public panel() {
         bt = new JButton("Submit");
@@ -67,12 +66,14 @@ class panel extends JPanel{
 }
 
 class Component extends JComponent {
-
-    int movx = 0;
+	private static final long serialVersionUID = 1L;
+	int movx = 0;
     int movy = 0;
     private double angle = 0;
-    private double radius = 0.0D;
-    private  Random numGen;
+    @SuppressWarnings("unused")
+	private double radius = 0.0D;
+    @SuppressWarnings("unused")
+	private  Random numGen;
     private int w = 500;
     private int h = 500;
 
@@ -173,6 +174,7 @@ public class PieChart {
         for(int i=0;i<size;i++){
             a[i] = s.nextDouble();
         }
+        s.close();
 
         frame.getContentPane().add(new Component(a,size));        
         frame.setVisible(true);

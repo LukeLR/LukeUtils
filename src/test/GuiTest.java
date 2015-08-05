@@ -27,6 +27,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GuiTest extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private JPanel p;
 	
 //	public static void main (String[] args){
@@ -37,6 +38,11 @@ public class GuiTest extends JFrame {
 	public GuiTest(){
 		super ("GUI-Test");
 		p = new JPanel(){
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
 			public void paintComponent (Graphics g)
 			{
 				System.out.println("painting...");

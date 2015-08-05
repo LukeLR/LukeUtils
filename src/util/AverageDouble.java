@@ -21,6 +21,7 @@ package util;
 import java.io.Serializable;
 
 public class AverageDouble implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private double value, sum;
 	private int num;
 	

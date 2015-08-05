@@ -29,6 +29,7 @@ import logging.Logger;
 
 public class NetworkServer extends Thread {
 	private NetworkNotifier nN;
+	@SuppressWarnings("unused")
 	private int port;
 	private String input;
 	private ServerSocket serverSocket;

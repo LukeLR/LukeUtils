@@ -18,17 +18,13 @@
 
 package test;
 
-import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GuiTest2 extends JFrame{
+	private static final long serialVersionUID = 1L;
 	private JPanel p;
 	private GridBagConstraints c;
 	private gui.Slice[] s;

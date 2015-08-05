@@ -21,11 +21,10 @@ package gui;
 import java.awt.Graphics;
 
 import javax.swing.JComponent;
-import javax.swing.JPanel;
-
 import logging.Logger;
 
 public class PieChart extends JComponent {
+	private static final long serialVersionUID = 1L;
 	private Slice[] s;
 	private double[] sums;
 	private boolean verbose = false;

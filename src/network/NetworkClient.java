@@ -30,7 +30,9 @@ import logging.Logger;
 //connects to a listening socket
 
 public class NetworkClient extends Thread {
+	@SuppressWarnings("unused")
 	private int port;
+	@SuppressWarnings("unused")
 	private String hostname;
 	private NetworkNotifier notifier;
 	private Socket socket;

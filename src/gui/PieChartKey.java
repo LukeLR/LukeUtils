@@ -31,6 +31,8 @@ import javax.swing.JPanel;
 import logging.Logger;
 
 public class PieChartKey extends JPanel{
+	private static final long serialVersionUID = 1L;
+	@SuppressWarnings("unused")
 	private PieChart pc;
 	private GridBagConstraints c;
 	private Slice[] s;

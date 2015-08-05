@@ -11,7 +11,7 @@ public class ListTest {
 	String strDefault, strAdvanced, strDebug;
 	
 	public ListTest(){
-		list = new LinkedList();
+		list = new LinkedList<Log>();
 		strDefault = "default";
 		strAdvanced = "advanced";
 		strDebug = "debug";
