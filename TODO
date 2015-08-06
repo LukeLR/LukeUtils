@@ -2,3 +2,6 @@ TODO LukeUtils:
 - PieChart: Leere Slices (value = 0) nicht zeichnen
 - PieChart: Gewichtung berücksichtigen
 - Logger: MessageTypes ('E', 'W', 'I' (...?)) als Log-Channel
+- Logger: print to std.err on specific message types (e.g. 'E')
+- Logger: set message types which print to std.err on Log-basis
+- Logger: disable print of specific message types on log-basis

@@ -110,7 +110,7 @@ public class List<E> {
 	public E get(int index){
 		if(!isEmpty()){
 			E object;
-			Node oldCurrent = current;
+			Node<E> oldCurrent = current;
 			jump(index);
 			object = current();
 			current = oldCurrent;

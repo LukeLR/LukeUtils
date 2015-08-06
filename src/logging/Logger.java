@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 public class Logger {
-	public static List<Log> logs = new LinkedList();
+	public static List<Log> logs = new LinkedList<Log>();
 	
 	public Logger () {
 		// Konstruktor nicht nötig, da statisch

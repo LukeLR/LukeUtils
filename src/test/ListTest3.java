@@ -7,7 +7,7 @@ import logging.Log;
 
 public class ListTest3 {
 	public static void main(String[] args){
-		List list = new LinkedList();
+		List<Log> list = new LinkedList<Log>();
 		Log logDefault = new Log();
 		logDefault.setChannel("default");
 		Log logAdvanced = new Log();

@@ -19,7 +19,6 @@
 package gui;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import java.util.Random;
 
 import logging.Logger;
@@ -157,7 +156,7 @@ public class Slice {
 		/**
 		 * Setzt die Farbe des Slices auf eine zuf��llig gew��hlte Farbe im RGB-Farbraum.
 		 */
-		color = this.randColor();
+		color = Slice.randColor();
 	}
 	
 	private static Color randColor(){
