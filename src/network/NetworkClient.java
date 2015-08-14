@@ -38,7 +38,7 @@ public class NetworkClient extends Thread {
 	private Socket socket;
 	private PrintWriter out;
 	private BufferedReader in;
-	private boolean verbose = true;
+	private boolean verbose = false;
 	
 	public NetworkClient(NetworkNotifier notifier, String hostname, int port){
 		this.port = port;
