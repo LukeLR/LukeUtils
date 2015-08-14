@@ -81,7 +81,7 @@ public class Logger {
 		long counter = 0;
 		Log dummy = new Log(channel);
 		Log result = null;
-		System.out.println("Searching for channel " + channel + ": " + String.valueOf(logs.contains(dummy)));
+//		System.out.println("Searching for channel " + channel + ": " + String.valueOf(logs.contains(dummy)));
 		int index = logs.indexOf(dummy);
 		if (index == -1){
 			System.out.println(counter + " [W][Logger][logMessage]: Log for channel " + channel + " does not exist. Trying to create a new one!");
